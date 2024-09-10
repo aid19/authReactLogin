@@ -1,6 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { Card, Flex, Typography, Form, Input, Button } from "antd";
+import { Card, Flex, Typography, Form, Input, Button, } from "antd";
+import { Link } from 'react-router-dom'
+import registerImage from '../assets/register.png'
 
 function Register() {
   const handleRegister = (values) => {
@@ -8,7 +10,7 @@ function Register() {
   };
   return (
     <Card className="form-container">
-      <Flex>
+      <Flex gap="large" align="center">
         {/* form */}
         <Flex vertical flex={1}>
           <Typography.Title level={3} strong className="title">
@@ -52,7 +54,7 @@ function Register() {
               rules={[
                 {
                   required: true,
-                  message: "Please input your Confirm Password!",
+                  message: "Please input your Password!",
                 },
               ]}
             >
@@ -61,28 +63,33 @@ function Register() {
                 placeholder="Re-enter your password"
               />
             </Form.Item>
+              {/* {error && <Alert description={error} type='error' showIcon closable className="alert" /> } */}
+            
             <Form.Item>
               <Button
-                type="primary"
+                // type={`${loading ? '' : "primary"}`}
                 htmlType="submit"
                 size="large"
                 className="btn"
               >
+                {/* {leading ? <Spin /> : "Create Account"} */}
                 Create Account
               </Button>
             </Form.Item>
             <Form.Item>
-              <a to="/login">
+              <Link to="/login">
                 {" "}
                 <Button size="large" className="btn">
                   Sign In
                 </Button>
-              </a>
+              </Link>
             </Form.Item>
           </Form>
         </Flex>
         {/* Image */}
-        <Flex></Flex>
+        <Flex flex={1}>
+          <img src={registerImage} className="auth-image" />
+        </Flex>
       </Flex>
     </Card>
   );

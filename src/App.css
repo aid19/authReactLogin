@@ -14,9 +14,29 @@ body {
 }
 
 .form-container {
-  width: 1000px;
+  width: 100%;
 }
 
 .title .slogan {
   text-align: center;
+}
+
+.btn {
+  width: 100%;
+}
+
+.auth-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.alert {
+  margin-bottom: 1.5rem;
+}
+
+
+@media screen and (min-width: 992px) {
+  .form-container {
+    width: 1000px;
+  }
 }
